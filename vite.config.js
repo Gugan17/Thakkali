@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
+  base: '/Thakkali/', // 👈 REQUIRED for GitHub Pages
+
   plugins: [react()],
+
   build: {
     rollupOptions: {
       output: {
@@ -25,9 +27,11 @@ export default defineConfig({
     target: 'es2015',
     minify: true,
   },
+
   optimizeDeps: {
     include: ['react', 'react-dom', 'framer-motion']
   },
+
   server: {
     headers: {
       'Cache-Control': 'public, max-age=31536000'
